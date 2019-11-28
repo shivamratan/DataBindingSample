@@ -4,6 +4,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
+import com.ratanapps.databindingsample.BR
 import com.ratanapps.databindingsample.R
 import com.ratanapps.databindingsample.data.MoneySavedErrorField
 import com.ratanapps.databindingsample.data.MoneySavedField

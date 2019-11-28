@@ -19,6 +19,8 @@ class MainActivity : AppCompatActivity() {
          mainActivityBinding = DataBindingUtil.setContentView(this,R.layout.activity_main)
          initViewModel()
 
+        mainActivityBinding.viewModel = mainViewModel
+
 
 
     }

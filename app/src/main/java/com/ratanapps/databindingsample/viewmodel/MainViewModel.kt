@@ -30,7 +30,7 @@ class MainViewModel:ViewModel()
      */
 
 
-    private lateinit var moneySavedForm:MainValidationForm
+    var moneySavedForm:MainValidationForm
 
     val numOfCiggrateFocusListener: View.OnFocusChangeListener
     val costOfCiggrateFocusListener: View.OnFocusChangeListener
