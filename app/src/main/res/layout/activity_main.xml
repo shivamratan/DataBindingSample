@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto">
+    <data>
+        <variable
+            name="viewModel"
+            type="com.ratanapps.databindingsample.viewmodel.MainViewModel" />
+    </data>
+
+    <ScrollView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:padding="30dp"
+            android:id="@+id/bottom_sheet"
+            android:layout_height="wrap_content">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data Binding "
+                android:textStyle="bold"
+                android:textSize="17sp"
+                android:textColor="#444444"
+                android:layout_marginBottom="10dp" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/btmsht_ciggrate_num"
+                style="@style/LoginEditTextInputLayout"
+                android:layout_width="match_parent"
+                android:hint="Name"
+                >
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/et_btmsht_ciggrate_num"
+                    style="@style/LoginEditTextInputField"
+                    android:maxLength="999"
+                    android:text="@={viewModel.moneySavedForm.bottomSheetField.numOfCiggrate}"
+                    app:error="@{viewModel.moneySavedForm.numOfCiggrateErr}"
+                    app:focus="@{viewModel.bottomNumOfCiggrateListener}"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/btmsht_costOfPack"
+                style="@style/LoginEditTextInputLayout"
+                android:layout_width="match_parent"
+                android:hint="Profile"
+                android:layout_marginTop="12sp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/etcostOfPack"
+                    style="@style/LoginEditTextInputField"
+                    android:maxLength="99999"
+                    android:text="@={viewModel.moneySavedForm.bottomSheetField.costOfPack}"
+                    app:error="@{viewModel.moneySavedForm.costOfPackErr}"
+                    app:focus="@{viewModel.bottomCostOfCiggrateListener}"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/btmsht_targetSaving"
+                style="@style/LoginEditTextInputLayout"
+                android:layout_width="match_parent"
+                android:hint="Profession"
+                android:layout_marginTop="12sp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ettargetSaving"
+                    style="@style/LoginEditTextInputField"
+                    android:text="@={viewModel.moneySavedForm.bottomSheetField.targetSaving}"
+                    app:error="@{viewModel.moneySavedForm.targetErr}"
+                    app:focus="@{viewModel.bottomTargetCostListener}"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/btmsht_targetSavingSubject"
+                style="@style/LoginEditTextInputLayout"
+                android:layout_width="match_parent"
+                android:hint="Subject"
+                android:layout_marginTop="12sp">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/ettargetSavingSubject"
+                    style="@style/LoginEditTextInputField"
+                    android:text="@={viewModel.moneySavedForm.bottomSheetField.description}"
+                    />
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:weightSum="100"
+                android:layout_marginTop="12sp">
+
+
+                <Button
+                    android:id="@+id/btn_cancel"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:text="Cancel"
+                    android:onClick="dismissBottomSheetDialog"
+                    android:layout_weight="50"
+                    />
+
+                <Button
+                    android:id="@+id/btn_startTracking"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="15dp"
+                    android:layout_weight="50"
+                    android:textAllCaps="false"
+                    android:enabled="@{viewModel.moneySavedForm.valid}"
+                    android:text="Start Tracking"
+                    />
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</layout>
