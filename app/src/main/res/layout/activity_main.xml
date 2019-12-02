@@ -2,6 +2,12 @@
 <layout xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
+            name="listener"
+            type="android.view.View.OnClickListener" />
+        <variable
+            name="handler"
+            type="com.ratanapps.databindingsample.ui.MainActivity.EventHandler" />
+        <variable
             name="viewModel"
             type="com.ratanapps.databindingsample.viewmodel.MainViewModel" />
     </data>
@@ -23,7 +29,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Data Binding "
+                android:text="Two Way Data Binding "
                 android:textStyle="bold"
                 android:textSize="17sp"
                 android:textColor="#444444"
@@ -39,10 +45,10 @@
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/et_btmsht_ciggrate_num"
                     style="@style/LoginEditTextInputField"
-                    android:maxLength="999"
-                    android:text="@={viewModel.moneySavedForm.bottomSheetField.numOfCiggrate}"
-                    app:error="@{viewModel.moneySavedForm.numOfCiggrateErr}"
-                    app:focus="@{viewModel.bottomNumOfCiggrateListener}"
+                    android:inputType="text"
+                    android:text="@={viewModel.mainValidationForm.accountField.nameOfPerson}"
+                    app:error="@{viewModel.mainValidationForm.nameOfPersonErr}"
+                    app:focus="@{viewModel.personNameFocusListener}"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -59,9 +65,10 @@
                     android:id="@+id/etcostOfPack"
                     style="@style/LoginEditTextInputField"
                     android:maxLength="99999"
-                    android:text="@={viewModel.moneySavedForm.bottomSheetField.costOfPack}"
-                    app:error="@{viewModel.moneySavedForm.costOfPackErr}"
-                    app:focus="@{viewModel.bottomCostOfCiggrateListener}"
+                    android:inputType="text"
+                    android:text="@={viewModel.mainValidationForm.accountField.profession}"
+                    app:error="@{viewModel.mainValidationForm.professionErr}"
+                    app:focus="@{viewModel.professionFocusListener}"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -71,15 +78,16 @@
                 android:id="@+id/btmsht_targetSaving"
                 style="@style/LoginEditTextInputLayout"
                 android:layout_width="match_parent"
-                android:hint="Profession"
+                android:hint="Target Saving"
                 android:layout_marginTop="12sp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/ettargetSaving"
                     style="@style/LoginEditTextInputField"
-                    android:text="@={viewModel.moneySavedForm.bottomSheetField.targetSaving}"
-                    app:error="@{viewModel.moneySavedForm.targetErr}"
-                    app:focus="@{viewModel.bottomTargetCostListener}"
+                    android:inputType="number"
+                    android:text="@={viewModel.mainValidationForm.accountField.targetSaving}"
+                    app:error="@{viewModel.mainValidationForm.targetSavingErr}"
+                    app:focus="@{viewModel.targetSavingFocusListener}"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -91,13 +99,14 @@
                 android:id="@+id/btmsht_targetSavingSubject"
                 style="@style/LoginEditTextInputLayout"
                 android:layout_width="match_parent"
-                android:hint="Subject"
+                android:hint="Remark"
                 android:layout_marginTop="12sp">
 
                 <com.google.android.material.textfield.TextInputEditText
                     android:id="@+id/ettargetSavingSubject"
                     style="@style/LoginEditTextInputField"
-                    android:text="@={viewModel.moneySavedForm.bottomSheetField.description}"
+                    android:inputType="text"
+                    android:text="@={viewModel.mainValidationForm.accountField.description}"
                     />
 
             </com.google.android.material.textfield.TextInputLayout>
@@ -120,7 +129,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:text="Cancel"
-                    android:onClick="dismissBottomSheetDialog"
+                    android:onClick="@{(view)-> handler.onCancelManipulateClick(view,viewModel,handler)}"
                     android:layout_weight="50"
                     />
 
@@ -131,8 +140,9 @@
                     android:layout_marginLeft="15dp"
                     android:layout_weight="50"
                     android:textAllCaps="false"
-                    android:enabled="@{viewModel.moneySavedForm.valid}"
-                    android:text="Start Tracking"
+                    android:onClick="@{(view) -> handler.onManipulateClick(view,viewModel)}"
+                    android:enabled="@{viewModel.mainValidationForm.valid}"
+                    android:text="Submit"
                     />
 
 

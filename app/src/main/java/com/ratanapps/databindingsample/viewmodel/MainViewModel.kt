@@ -30,46 +30,51 @@ class MainViewModel:ViewModel()
      */
 
 
-    var moneySavedForm:MainValidationForm
+    var mainValidationForm:MainValidationForm
 
-    val numOfCiggrateFocusListener: View.OnFocusChangeListener
-    val costOfCiggrateFocusListener: View.OnFocusChangeListener
-    val targetPriceFocusListener: View.OnFocusChangeListener
+    private val personNameFocusListener: View.OnFocusChangeListener
+    private val professionFocusListener: View.OnFocusChangeListener
+    private val targetSavingFocusListener: View.OnFocusChangeListener
 
     init {
-        moneySavedForm = MainValidationForm()
-        numOfCiggrateFocusListener = object : View.OnFocusChangeListener {
+        mainValidationForm = MainValidationForm()
+        personNameFocusListener = object : View.OnFocusChangeListener {
             override fun onFocusChange(v: View?, hasFocus: Boolean) {
                 val editText = v as EditText
                 if(!editText.text.isEmpty() && !hasFocus)
-                    moneySavedForm.isNumberOfCigratteValid()
+                    mainValidationForm.isNameValid()
+                    mainValidationForm.notifyPersonPropertyChanged()
             }
         }
 
-        costOfCiggrateFocusListener = object : View.OnFocusChangeListener {
+        professionFocusListener = object : View.OnFocusChangeListener {
             override fun onFocusChange(v: View?, hasFocus: Boolean) {
                 val editText = v as EditText
                 if(!editText.text.isEmpty() && !hasFocus)
-                    moneySavedForm.isCostPerPackValid()
+                    mainValidationForm.isProfessionValid()
+                    mainValidationForm.notifyProfessionPropertyChanged()
             }
         }
 
 
-        targetPriceFocusListener = object : View.OnFocusChangeListener{
+        targetSavingFocusListener = object : View.OnFocusChangeListener{
             override fun onFocusChange(v: View?, hasFocus: Boolean) {
                 val editText = v as EditText
                 if(!editText.text.isEmpty() && !hasFocus)
-                    moneySavedForm.isTargetSavingValid()
+                    mainValidationForm.isTargetSavingValid()
+                    mainValidationForm.notifyTargetSavingChanged()
             }
         }
     }
 
 
-    fun getBottomNumOfCiggrateListener() = numOfCiggrateFocusListener
+    fun getPersonNameFocusListener() = personNameFocusListener
 
-    fun getBottomCostOfCiggrateListener() = costOfCiggrateFocusListener
+    fun getProfessionFocusListener() = professionFocusListener
 
-    fun getBottomTargetCostListener() = targetPriceFocusListener
+    fun getTargetSavingFocusListener() = targetSavingFocusListener
+
+    fun getMessage() = "Welcome Dog !"
 
 
 

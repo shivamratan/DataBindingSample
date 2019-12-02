@@ -1,73 +1,59 @@
 package com.ratanapps.databindingsample.binding
 
-import android.text.Editable
-import android.text.TextWatcher
 import androidx.databinding.BaseObservable
 import androidx.databinding.Bindable
 import com.ratanapps.databindingsample.BR
 import com.ratanapps.databindingsample.R
-import com.ratanapps.databindingsample.data.MoneySavedErrorField
-import com.ratanapps.databindingsample.data.MoneySavedField
+import com.ratanapps.databindingsample.data.AccountErrorField
+import com.ratanapps.databindingsample.data.AccountField
 
 class MainValidationForm: BaseObservable()
 {
-    val moneySavedField:MoneySavedField = MoneySavedField()
-    val moneySavedErrorField:MoneySavedErrorField = MoneySavedErrorField()
+    val myAccountField:AccountField = AccountField()
+    val accountErrorField:AccountErrorField = AccountErrorField()
 
 
     @Bindable
     fun isValid():Boolean{
-        val targetSaving = moneySavedField.targetSaving
+        val targetSaving = myAccountField.targetSaving
         var targetValid: Boolean
         if(targetSaving!=null)
             targetValid = isTargetSavingValid()
         else
             targetValid = false
 
-        val valid = isNumberOfCigratteValid() && isCostPerPackValid() && targetValid
-        notifyPropertyChanged(BR.numOfCiggrateErr)
-        notifyPropertyChanged(BR.costOfPackErr)
-        notifyPropertyChanged(BR.targetErr)
+        val valid = isNameValid() && isProfessionValid() && targetValid
+        notifyPropertyChanged(BR.nameOfPersonErr)
+        notifyPropertyChanged(BR.professionErr)
+        notifyPropertyChanged(BR.targetSavingErr)
         return valid
     }
 
-
-    fun getMyTextWatcher() = object: TextWatcher {
-        override fun afterTextChanged(s: Editable?) {
-
-        }
-
-        override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
-
-        override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-            TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-        }
-
-    }
-
-    fun isNumberOfCigratteValid():Boolean{
-        val numOfCigrate:Int? = moneySavedField.numOfCiggrate?.toInt()
-        if(!(numOfCigrate!=null&&numOfCigrate>0&&numOfCigrate<999)){
-            moneySavedErrorField.numOfCiggrateErr = R.string.dashbrd_btm_sheet_numOfCigg_err
+    fun isNameValid():Boolean{
+        val nameOfPerson:String? = myAccountField.nameOfPerson
+        if(!(nameOfPerson!=null&&!nameOfPerson.isEmpty()&&nameOfPerson.length<999)){
+            accountErrorField.nameOfPersonErr = R.string.account_person_err
+           // notifyPropertyChanged(BR.nameOfPersonErr)
             notifyPropertyChanged(BR.valid)
             return false
         }else{
-            moneySavedErrorField.numOfCiggrateErr = null
+            accountErrorField.nameOfPersonErr = null
+           // notifyPropertyChanged(BR.nameOfPersonErr)
             notifyPropertyChanged(BR.valid)
             return true
         }
     }
 
-    fun isCostPerPackValid():Boolean{
-        val costPerPack:Int? = moneySavedField.costOfPack?.toInt()
-        if(!(costPerPack!=null && costPerPack>0&& costPerPack<999)){
-            moneySavedErrorField.costOfPackErr = R.string.dashbrd_btm_sheet_costOfPack_err
+    fun isProfessionValid():Boolean{
+        val profession:String? = myAccountField.profession
+        if(!(profession!=null && !profession.isEmpty())){
+            accountErrorField.professionErr = R.string.account_profession_err
+          //  notifyPropertyChanged(BR.professionErr)
             notifyPropertyChanged(BR.valid)
             return false
         }else{
-            moneySavedErrorField.costOfPackErr = null
+            accountErrorField.professionErr = null
+          //  notifyPropertyChanged(BR.professionErr)
             notifyPropertyChanged(BR.valid)
             return true
         }
@@ -75,32 +61,46 @@ class MainValidationForm: BaseObservable()
 
 
     fun isTargetSavingValid():Boolean{
-        val targetSaving:Int? = moneySavedField.targetSaving?.toInt()
-        if(!(targetSaving!=null && targetSaving>0&& targetSaving<99999)){
-            moneySavedErrorField.targetErr = R.string.dashbrd_btm_sheet_targetprice_err
+        val targetSaving:String? = myAccountField.targetSaving
+        if(!(targetSaving!=null && !targetSaving.isEmpty())){
+            accountErrorField.targetSavingErr = R.string.account_targetSaving_err
+           // notifyPropertyChanged(BR.targetSavingErr)
             notifyPropertyChanged(BR.valid)
             return false
         }else{
-            moneySavedErrorField.targetErr = null
-            notifyPropertyChanged(BR.valid)
-            return true
+
+            val mytargetSaving:Long = targetSaving.toLong()
+           if(mytargetSaving<9999||mytargetSaving>10_00_00000L){
+               accountErrorField.targetSavingErr = R.string.account_targetSaving_less9999_err
+              // notifyPropertyChanged(BR.targetSavingErr)
+               notifyPropertyChanged(BR.valid)
+               return false
+           }else {
+               accountErrorField.targetSavingErr = null
+              // notifyPropertyChanged(BR.targetSavingErr)
+               notifyPropertyChanged(BR.valid)
+               return true
+           }
         }
     }
 
 
 
+    fun notifyPersonPropertyChanged() = notifyPropertyChanged(BR.nameOfPersonErr)
+    fun notifyProfessionPropertyChanged() = notifyPropertyChanged(BR.professionErr)
+    fun notifyTargetSavingChanged() = notifyPropertyChanged(BR.targetSavingErr)
 
-    fun getBottomSheetField() = moneySavedField
+    fun getAccountField() = myAccountField
 
-
-    @Bindable
-    fun getNumOfCiggrateErr() = moneySavedErrorField.numOfCiggrateErr
-
-    @Bindable
-    fun getCostOfPackErr() = moneySavedErrorField.costOfPackErr
 
     @Bindable
-    fun getTargetErr() = moneySavedErrorField.targetErr
+    fun getNameOfPersonErr() = accountErrorField.nameOfPersonErr
+
+    @Bindable
+    fun getProfessionErr() = accountErrorField.professionErr
+
+    @Bindable
+    fun getTargetSavingErr() = accountErrorField.targetSavingErr
 
 
 }
