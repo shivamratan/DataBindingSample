@@ -6,6 +6,8 @@ import androidx.lifecycle.ViewModel
 
 class SendViewModel : ViewModel() {
 
+    val currentTab:MutableLiveData<Int> = MutableLiveData()
+
     private val _text = MutableLiveData<String>().apply {
         value = "This is send Fragment"
     }
