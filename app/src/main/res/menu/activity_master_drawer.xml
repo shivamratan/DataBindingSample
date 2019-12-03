@@ -8,22 +8,15 @@
      <group android:checkableBehavior="single">
         <item
             android:id="@+id/nav_home"
-            android:icon="@drawable/ic_menu_camera"
-            android:title="@string/menu_home" />
+            android:icon="@drawable/ic_star_black_24dp"
+            android:title="Basic Rendering" />
         <item
             android:id="@+id/nav_gallery"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery" />
+            android:icon="@drawable/ic_star_black_24dp"
+            android:title="List Binding" />
 
      </group>
-       <!-- <item
-            android:id="@+id/nav_slideshow"
-            android:icon="@drawable/ic_menu_slideshow"
-            android:title="@string/menu_slideshow" />
-        <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />-->
+
     </menu>
   </item>
 
@@ -33,13 +26,13 @@
 
           <group android:checkableBehavior="single">
             <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
+                android:id="@+id/nav_slideshow"
+                android:icon="@drawable/ic_star_black_24dp"
+                android:title="Form Validation" />
             <item
                 android:id="@+id/nav_send"
-                android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:icon="@drawable/ic_star_black_24dp"
+                android:title="View Pager" />
           </group>
         </menu>
     </item>
@@ -48,13 +41,13 @@
         <menu>
             <group android:checkableBehavior="single">
                 <item
-                    android:id="@+id/nav_slideshow"
-                    android:icon="@drawable/ic_menu_slideshow"
-                    android:title="@string/menu_slideshow" />
-                <item
+                    android:id="@+id/nav_share"
+                    android:icon="@drawable/ic_star_black_24dp"
+                    android:title="Miscelaneous" />
+                <!--<item
                     android:id="@+id/nav_tools"
                     android:icon="@drawable/ic_menu_manage"
-                    android:title="@string/menu_tools" />
+                    android:title="@string/menu_tools" />-->
             </group>
         </menu>
     </item>

@@ -3,11 +3,11 @@
     <data>
         <variable
             name="myadapter"
-            type="com.ratanapps.databindingsample.ui.ui.send.SendFragment.PagerAdapter" />
+            type="com.ratanapps.databindingsample.ui.fragment.send.SendFragment.PagerAdapter" />
 
         <variable
             name="viewModel"
-            type="com.ratanapps.databindingsample.ui.ui.send.SendViewModel" />
+            type="com.ratanapps.databindingsample.ui.fragment.send.SendViewModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -27,9 +27,8 @@
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:viewPagerAdapter="@{myadapter}"
-        app:currentTab="@={viewModel.currentTab}"
-        app:currentTabAttrChanged=""
+        viewPagerAdapter="@{myadapter}"
+        currentTab="@={viewModel.currentTab}"
         app:layout_constraintTop_toBottomOf="@+id/tab_layout"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />

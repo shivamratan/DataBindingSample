@@ -13,7 +13,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="3dp"
     android:background="#EBEBEB"
-    tools:context=".ui.fragment.ItemListFragment">
+    tools:context=".ui.fragment.ItemList.ItemListFragment">
 
 
     <androidx.recyclerview.widget.RecyclerView

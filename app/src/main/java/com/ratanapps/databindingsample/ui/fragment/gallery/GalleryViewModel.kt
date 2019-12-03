@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.ui.gallery
+package com.ratanapps.databindingsample.ui.fragment.gallery
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.MasterActivity"
+            android:name=".ui.activity.MasterActivity"
             android:label="@string/title_activity_master"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>

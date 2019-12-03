@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.ui.send
+package com.ratanapps.databindingsample.ui.fragment.send
 
 import androidx.databinding.InverseBindingListener
 import androidx.lifecycle.LiveData
@@ -8,12 +8,6 @@ import androidx.lifecycle.ViewModel
 class SendViewModel : ViewModel() {
 
     val currentTab:MutableLiveData<Int> = MutableLiveData()
-    val inverseBindingListener:InverseBindingListener= object :InverseBindingListener{
-        override fun onChange() {
-
-        }
-
-    }
 
     init {
         currentTab.value = 1

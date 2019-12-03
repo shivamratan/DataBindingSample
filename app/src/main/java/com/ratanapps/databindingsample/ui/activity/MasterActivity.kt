@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui
+package com.ratanapps.databindingsample.ui.activity
 
 import android.os.Bundle
 import com.google.android.material.floatingactionbutton.FloatingActionButton

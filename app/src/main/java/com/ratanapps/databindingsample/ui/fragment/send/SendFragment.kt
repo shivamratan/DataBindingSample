@@ -1,6 +1,8 @@
-package com.ratanapps.databindingsample.ui.ui.send
+package com.ratanapps.databindingsample.ui.fragment.send
 
+import android.app.Activity
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,14 +14,14 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.viewpager.widget.PagerAdapter
 import androidx.viewpager.widget.ViewPager
 import com.ratanapps.databindingsample.R
 import com.ratanapps.databindingsample.databinding.FragmentSendBinding
-import com.ratanapps.databindingsample.ui.ui.share.ShareFragment
-import com.ratanapps.databindingsample.ui.ui.slideshow.SlideshowFragment
-import com.ratanapps.databindingsample.ui.ui.tools.ToolsFragment
+import com.ratanapps.databindingsample.ui.fragment.share.ShareFragment
+import com.ratanapps.databindingsample.ui.fragment.slideshow.SlideshowFragment
+import com.ratanapps.databindingsample.ui.fragment.tools.ToolsFragment
 
 class SendFragment : Fragment() {
 
@@ -44,17 +46,17 @@ class SendFragment : Fragment() {
 
     class PagerAdapter(fm:FragmentManager): FragmentStatePagerAdapter(fm) {
 
-        override fun getItem(position: Int)= when(position){
-                0-> ShareFragment()
-                1-> SlideshowFragment()
-                2-> ToolsFragment()
-                else -> ShareFragment()
-            }
+        override fun getItem(position: Int) = when (position) {
+            0 -> ShareFragment()
+            1 -> ToolsFragment()
+            2 -> SlideshowFragment()
+            else -> ShareFragment()
+        }
 
 
         override fun getCount() = 3
 
-        override fun getPageTitle(position: Int) = when(position){
+        override fun getPageTitle(position: Int) = when (position) {
             0 -> "Share"
             1 -> "Slide"
             2 -> "Tools"
@@ -92,18 +94,28 @@ class SendFragment : Fragment() {
 
         @BindingAdapter("currentTabAttrChanged")
         @JvmStatic
-        fun setCurrentTabListener(viewPager:ViewPager, listener:InverseBindingListener){
+        fun setCurrentTabListener(viewPager:ViewPager,listener:InverseBindingListener){
             viewPager.addOnPageChangeListener(object:ViewPager.SimpleOnPageChangeListener(){
                 override fun onPageSelected(position: Int) {
                     super.onPageSelected(position)
                     listener.onChange()
+                    Log.e("ChangedTAB","Changed TAB "+position)
                 }
             })
+
+
         }
 
 
-        @InverseBindingAdapter(attribute = "currentTab", event = "currentTabAttrChanged")
+        @InverseBindingAdapter(attribute = "currentTab")
         @JvmStatic
-        fun getCurrentTab(pager:ViewPager)  = pager.currentItem
+        fun getCurrentTab(pager:ViewPager):Int{
+            val cur = pager.currentItem
+            val mutableLiveData = MutableLiveData<Int>()
+            mutableLiveData.value = cur
+            setCurrentTab(pager, mutableLiveData)
+            Log.e("LT Changed","Attr Changed $cur")
+            return pager.currentItem
+        }
     }
 }

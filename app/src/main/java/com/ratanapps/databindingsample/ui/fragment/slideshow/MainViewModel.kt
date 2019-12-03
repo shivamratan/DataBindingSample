@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.viewmodel
+package com.ratanapps.databindingsample.ui.fragment.slideshow
 
 import android.view.View
 import android.widget.EditText

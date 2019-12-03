@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.ui.gallery
+package com.ratanapps.databindingsample.ui.fragment.gallery
 
 import android.os.Bundle
 import android.view.LayoutInflater
