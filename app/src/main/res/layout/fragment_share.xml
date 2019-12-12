@@ -6,7 +6,7 @@
 
         <variable
             name="viewmOdel"
-            type="com.ratanapps.databindingsample.ui.fragment.sample.share.ShareViewModel" />
+            type="com.ratanapps.databindingsample.ui.fragment.utilFrag.share.ShareViewModel" />
     </data>
 
 

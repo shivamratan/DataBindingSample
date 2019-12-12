@@ -6,10 +6,10 @@
             type="android.view.View.OnClickListener" />
         <variable
             name="handler"
-            type="com.ratanapps.databindingsample.ui.fragment.twoWayDB.TwoWayDataBindingFragment.EventHandler" />
+            type="com.ratanapps.databindingsample.ui.fragment.twoWayDB.validationForm.TwoWayDataBindingFragment.EventHandler" />
         <variable
             name="viewModel"
-            type="com.ratanapps.databindingsample.ui.fragment.twoWayDB.MainViewModel" />
+            type="com.ratanapps.databindingsample.ui.fragment.twoWayDB.validationForm.MainViewModel" />
     </data>
 
     <ScrollView

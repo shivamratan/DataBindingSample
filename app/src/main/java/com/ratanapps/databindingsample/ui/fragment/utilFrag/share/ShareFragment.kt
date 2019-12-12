@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.fragment.sample.share
+package com.ratanapps.databindingsample.ui.fragment.utilFrag.share
 
 import android.content.Context
 import android.os.Bundle

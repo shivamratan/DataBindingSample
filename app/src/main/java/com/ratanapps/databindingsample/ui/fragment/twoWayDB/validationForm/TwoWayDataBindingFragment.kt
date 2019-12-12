@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.fragment.twoWayDB
+package com.ratanapps.databindingsample.ui.fragment.twoWayDB.validationForm
 
 import android.os.Bundle
 import android.util.Log
@@ -26,7 +26,8 @@ class TwoWayDataBindingFragment : Fragment(), View.OnClickListener {
         initViewModel()
 
         mainActivityBinding.viewModel = mainViewModel
-        mainActivityBinding.handler = EventHandler()
+        mainActivityBinding.handler =
+            EventHandler()
         mainActivityBinding.listener = this
 
         return mainActivityBinding.root

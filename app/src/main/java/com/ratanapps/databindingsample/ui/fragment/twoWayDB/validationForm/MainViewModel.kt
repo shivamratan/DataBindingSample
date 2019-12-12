@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.fragment.twoWayDB
+package com.ratanapps.databindingsample.ui.fragment.twoWayDB.validationForm
 
 import android.view.View
 import android.widget.EditText

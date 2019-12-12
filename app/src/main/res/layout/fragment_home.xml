@@ -4,7 +4,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.ratanapps.databindingsample.ui.fragment.home.OneWayDBViewModel" />
+            type="com.ratanapps.databindingsample.ui.fragment.oneWayDB.home.OneWayDBViewModel" />
         <variable
             name="handler"
             type="android.view.View.OnClickListener" />

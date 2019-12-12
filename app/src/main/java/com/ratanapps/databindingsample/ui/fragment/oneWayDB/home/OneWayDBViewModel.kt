@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.fragment.home
+package com.ratanapps.databindingsample.ui.fragment.oneWayDB.home
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.fragment.viewPager
+package com.ratanapps.databindingsample.ui.fragment.twoWayDB.viewPager
 
 import android.os.Bundle
 import android.util.Log
@@ -17,9 +17,9 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
 import com.ratanapps.databindingsample.R
 import com.ratanapps.databindingsample.databinding.FragmentSendBinding
-import com.ratanapps.databindingsample.ui.fragment.sample.share.ShareFragment
-import com.ratanapps.databindingsample.ui.fragment.sample.tools.ToolsFragment
-import com.ratanapps.databindingsample.ui.fragment.twoWayDB.TwoWayDataBindingFragment
+import com.ratanapps.databindingsample.ui.fragment.twoWayDB.validationForm.TwoWayDataBindingFragment
+import com.ratanapps.databindingsample.ui.fragment.utilFrag.share.ShareFragment
+import com.ratanapps.databindingsample.ui.fragment.utilFrag.tools.ToolsFragment
 
 class SendFragment : Fragment() {
 

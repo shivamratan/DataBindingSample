@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.fragment.viewPager
+package com.ratanapps.databindingsample.ui.fragment.twoWayDB.viewPager
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.fragment.home
+package com.ratanapps.databindingsample.ui.fragment.oneWayDB.home
 
 import android.os.Bundle
 import android.view.LayoutInflater

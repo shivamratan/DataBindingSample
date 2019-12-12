@@ -8,37 +8,37 @@
 
     <fragment
         android:id="@+id/nav_send"
-        android:name="com.ratanapps.databindingsample.ui.fragment.viewPager.SendFragment"
+        android:name="com.ratanapps.databindingsample.ui.fragment.twoWayDB.viewPager.SendFragment"
         android:label="@string/menu_send"
         tools:layout="@layout/fragment_send" />
 
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.ratanapps.databindingsample.ui.fragment.home.OneWayDataBindingFragment"
+        android:name="com.ratanapps.databindingsample.ui.fragment.oneWayDB.home.OneWayDataBindingFragment"
         android:label="@string/menu_home"
         tools:layout="@layout/fragment_home" />
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.ratanapps.databindingsample.ui.fragment.ItemList.ItemListFragment"
+        android:name="com.ratanapps.databindingsample.ui.fragment.oneWayDB.ItemList.ItemListFragment"
         android:label="@string/menu_gallery"
         tools:layout="@layout/item_list_fragment" />
 
     <fragment
         android:id="@+id/nav_slideshow"
-        android:name="com.ratanapps.databindingsample.ui.fragment.twoWayDB.TwoWayDataBindingFragment"
+        android:name="com.ratanapps.databindingsample.ui.fragment.twoWayDB.validationForm.TwoWayDataBindingFragment"
         android:label="@string/menu_slideshow"
         tools:layout="@layout/activity_main" />
 
     <fragment
         android:id="@+id/nav_tools"
-        android:name="com.ratanapps.databindingsample.ui.fragment.sample.tools.ToolsFragment"
+        android:name="com.ratanapps.databindingsample.ui.fragment.utilFrag.tools.ToolsFragment"
         android:label="@string/menu_tools"
         tools:layout="@layout/fragment_tools" />
 
     <fragment
         android:id="@+id/nav_share"
-        android:name="com.ratanapps.databindingsample.ui.fragment.sample.share.ShareFragment"
+        android:name="com.ratanapps.databindingsample.ui.fragment.utilFrag.share.ShareFragment"
         android:label="@string/menu_share"
         tools:layout="@layout/fragment_share" />
 
