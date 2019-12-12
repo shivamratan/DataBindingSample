@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.fragment.slideshow
+package com.ratanapps.databindingsample.ui.fragment.twoWayDB
 
 import android.os.Bundle
 import android.util.Log
@@ -12,7 +12,7 @@ import androidx.lifecycle.ViewModelProviders
 import com.ratanapps.databindingsample.R
 import com.ratanapps.databindingsample.databinding.ActivityMainBinding
 
-class SlideshowFragment : Fragment(),View.OnClickListener {
+class TwoWayDataBindingFragment : Fragment(), View.OnClickListener {
 
     private lateinit var mainViewModel: MainViewModel
 

@@ -1,6 +1,5 @@
-package com.ratanapps.databindingsample.ui.fragment.send
+package com.ratanapps.databindingsample.ui.fragment.viewPager
 
-import android.app.Activity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -14,24 +13,23 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.viewpager.widget.ViewPager
 import com.ratanapps.databindingsample.R
 import com.ratanapps.databindingsample.databinding.FragmentSendBinding
-import com.ratanapps.databindingsample.ui.fragment.share.ShareFragment
-import com.ratanapps.databindingsample.ui.fragment.slideshow.SlideshowFragment
-import com.ratanapps.databindingsample.ui.fragment.tools.ToolsFragment
+import com.ratanapps.databindingsample.ui.fragment.sample.share.ShareFragment
+import com.ratanapps.databindingsample.ui.fragment.sample.tools.ToolsFragment
+import com.ratanapps.databindingsample.ui.fragment.twoWayDB.TwoWayDataBindingFragment
 
 class SendFragment : Fragment() {
 
-    private lateinit var sendViewModel: SendViewModel
+    private lateinit var sendViewModel: ViewPagerModel
     private lateinit var fragmentSendBinding:FragmentSendBinding
 
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         sendViewModel =
-            ViewModelProviders.of(this).get(SendViewModel::class.java)
+            ViewModelProviders.of(this).get(ViewPagerModel::class.java)
 
         fragmentSendBinding = DataBindingUtil.inflate<FragmentSendBinding>(inflater,R.layout.fragment_send,container,false)
         fragmentSendBinding.myadapter = PagerAdapter(requireActivity().supportFragmentManager)
@@ -49,7 +47,7 @@ class SendFragment : Fragment() {
         override fun getItem(position: Int) = when (position) {
             0 -> ShareFragment()
             1 -> ToolsFragment()
-            2 -> SlideshowFragment()
+            2 -> TwoWayDataBindingFragment()
             else -> ShareFragment()
         }
 

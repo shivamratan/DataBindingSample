@@ -1,11 +1,10 @@
-package com.ratanapps.databindingsample.ui.fragment.send
+package com.ratanapps.databindingsample.ui.fragment.viewPager
 
-import androidx.databinding.InverseBindingListener
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class SendViewModel : ViewModel() {
+class ViewPagerModel : ViewModel() {
 
     val currentTab:MutableLiveData<Int> = MutableLiveData()
 

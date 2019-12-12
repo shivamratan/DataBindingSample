@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:tools="http://schemas.android.com/tools"
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <data>
         <variable
             name="viewModel"
-            type="com.ratanapps.databindingsample.ui.fragment.home.HomeViewModel" />
+            type="com.ratanapps.databindingsample.ui.fragment.home.OneWayDBViewModel" />
         <variable
             name="handler"
             type="android.view.View.OnClickListener" />

@@ -12,13 +12,13 @@ import com.ratanapps.databindingsample.R
 import com.ratanapps.databindingsample.data.User
 import com.ratanapps.databindingsample.databinding.FragmentHomeBinding
 
-class HomeFragment : Fragment(),View.OnClickListener {
+class OneWayDataBindingFragment : Fragment(), View.OnClickListener {
 
-    private lateinit var homeViewModel: HomeViewModel
+    private lateinit var homeViewModel: OneWayDBViewModel
     private lateinit var fragmentHomeBinding:FragmentHomeBinding
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        homeViewModel = ViewModelProviders.of(this).get(HomeViewModel::class.java)
+        homeViewModel = ViewModelProviders.of(this).get(OneWayDBViewModel::class.java)
          fragmentHomeBinding = DataBindingUtil.inflate<FragmentHomeBinding>(inflater,R.layout.fragment_home,container,false)
         fragmentHomeBinding.viewModel = homeViewModel
         fragmentHomeBinding.handler = this

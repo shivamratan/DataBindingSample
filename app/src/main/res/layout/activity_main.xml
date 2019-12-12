@@ -6,10 +6,10 @@
             type="android.view.View.OnClickListener" />
         <variable
             name="handler"
-            type="com.ratanapps.databindingsample.ui.fragment.slideshow.SlideshowFragment.EventHandler" />
+            type="com.ratanapps.databindingsample.ui.fragment.twoWayDB.TwoWayDataBindingFragment.EventHandler" />
         <variable
             name="viewModel"
-            type="com.ratanapps.databindingsample.ui.fragment.slideshow.MainViewModel" />
+            type="com.ratanapps.databindingsample.ui.fragment.twoWayDB.MainViewModel" />
     </data>
 
     <ScrollView

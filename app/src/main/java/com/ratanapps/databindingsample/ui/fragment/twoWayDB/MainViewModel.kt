@@ -1,4 +1,4 @@
-package com.ratanapps.databindingsample.ui.fragment.slideshow
+package com.ratanapps.databindingsample.ui.fragment.twoWayDB
 
 import android.view.View
 import android.widget.EditText

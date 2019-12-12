@@ -2,6 +2,11 @@
 <layout>
     <data>
 
+        <import type="android.view.View" />
+
+        <variable
+            name="viewmOdel"
+            type="com.ratanapps.databindingsample.ui.fragment.sample.share.ShareViewModel" />
     </data>
 
 
@@ -19,7 +24,6 @@
         android:layout_marginEnd="8dp"
         android:textAlignment="center"
         android:textSize="20sp"
-        android:visibility="@{false}"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

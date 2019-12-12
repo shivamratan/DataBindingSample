@@ -3,11 +3,11 @@
     <data>
         <variable
             name="myadapter"
-            type="com.ratanapps.databindingsample.ui.fragment.send.SendFragment.PagerAdapter" />
+            type="com.ratanapps.databindingsample.ui.fragment.viewPager.SendFragment.PagerAdapter" />
 
         <variable
             name="viewModel"
-            type="com.ratanapps.databindingsample.ui.fragment.send.SendViewModel" />
+            type="com.ratanapps.databindingsample.ui.fragment.viewPager.ViewPagerModel" />
     </data>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
